@@ -4,6 +4,9 @@ const revealButtons = document.querySelectorAll(".reveal-btn");
 const quizForm = document.querySelector("#quizForm");
 const resetQuiz = document.querySelector("#resetQuiz");
 const quizScore = document.querySelector("#quizScore");
+const mobileMenuButton = document.querySelector(".menu-toggle");
+const mobilePanel = document.querySelector("#mobileNav");
+const mobileLinks = document.querySelectorAll(".mobile-links .nav-link");
 
 const answers = {
   q1: {
@@ -84,4 +87,58 @@ resetQuiz?.addEventListener("click", () => {
     feedback.className = "feedback";
   });
   quizScore.textContent = "";
+});
+
+const closeMobileMenu = () => {
+  mobileMenuButton?.classList.remove("is-open");
+  mobileMenuButton?.setAttribute("aria-expanded", "false");
+  mobilePanel?.classList.remove("is-open", "show");
+  document.body.classList.remove("mobile-nav-open");
+};
+
+mobileMenuButton?.addEventListener("click", () => {
+  const isOpen = mobileMenuButton.classList.toggle("is-open");
+  mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
+  mobilePanel?.classList.toggle("is-open", isOpen);
+  document.body.classList.toggle("mobile-nav-open", isOpen);
+});
+
+mobileLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    closeMobileMenu();
+  });
+});
+
+mobilePanel?.querySelector(".btn-close")?.addEventListener("click", () => {
+  closeMobileMenu();
+});
+
+mobilePanel?.addEventListener("shown.bs.offcanvas", () => {
+  mobileMenuButton?.classList.add("is-open");
+  mobileMenuButton?.setAttribute("aria-expanded", "true");
+  mobilePanel.classList.add("is-open");
+  document.body.classList.add("mobile-nav-open");
+});
+
+mobilePanel?.addEventListener("hidden.bs.offcanvas", () => {
+  closeMobileMenu();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
+});
+
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  if (
+    document.body.classList.contains("mobile-nav-open") &&
+    mobilePanel &&
+    mobileMenuButton &&
+    !mobilePanel.contains(target) &&
+    !mobileMenuButton.contains(target)
+  ) {
+    closeMobileMenu();
+  }
 });
