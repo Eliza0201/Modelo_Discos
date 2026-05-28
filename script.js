@@ -92,7 +92,8 @@ resetQuiz?.addEventListener("click", () => {
 const closeMobileMenu = () => {
   mobileMenuButton?.classList.remove("is-open");
   mobileMenuButton?.setAttribute("aria-expanded", "false");
-  mobilePanel?.classList.remove("is-open", "show");
+  mobilePanel?.classList.remove("is-open");
+  mobilePanel?.setAttribute("aria-hidden", "true");
   document.body.classList.remove("mobile-nav-open");
 };
 
@@ -100,27 +101,21 @@ mobileMenuButton?.addEventListener("click", () => {
   const isOpen = mobileMenuButton.classList.toggle("is-open");
   mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
   mobilePanel?.classList.toggle("is-open", isOpen);
+  mobilePanel?.setAttribute("aria-hidden", String(!isOpen));
   document.body.classList.toggle("mobile-nav-open", isOpen);
 });
 
 mobileLinks.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
     closeMobileMenu();
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.pushState(null, "", link.getAttribute("href"));
   });
 });
 
 mobilePanel?.querySelector(".btn-close")?.addEventListener("click", () => {
-  closeMobileMenu();
-});
-
-mobilePanel?.addEventListener("shown.bs.offcanvas", () => {
-  mobileMenuButton?.classList.add("is-open");
-  mobileMenuButton?.setAttribute("aria-expanded", "true");
-  mobilePanel.classList.add("is-open");
-  document.body.classList.add("mobile-nav-open");
-});
-
-mobilePanel?.addEventListener("hidden.bs.offcanvas", () => {
   closeMobileMenu();
 });
 
