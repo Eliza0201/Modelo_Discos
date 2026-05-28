@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OVA | Método de discos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#sideNav" data-bs-offset="120" tabindex="0">
+    <button class="menu-toggle d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Abrir navegacion">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <aside class="sidebar d-none d-lg-flex">
+      <div>
+        <div class="brand-block">
+          <span class="brand-mark">∫</span>
+          <div>
+            <p class="brand-kicker">OVA interactivo</p>
+            <h1>Método de discos</h1>
+          </div>
+        </div>
+        <nav id="sideNav" class="nav nav-pills flex-column">
+          <a class="nav-link" href="#portada">Portada</a>
+          <a class="nav-link" href="#objetivos">Objetivos</a>
+          <a class="nav-link" href="#introduccion">Introducción</a>
+          <a class="nav-link" href="#marco">Marco conceptual</a>
+          <a class="nav-link" href="#procedimiento">Procedimiento</a>
+          <a class="nav-link" href="#galeria">Galería visual</a>
+          <a class="nav-link" href="#visual">Representación visual</a>
+          <a class="nav-link" href="#videos">Videos</a>
+          <a class="nav-link" href="#ejemplo">Ejemplo resuelto</a>
+          <a class="nav-link" href="#practica">Práctica</a>
+          <a class="nav-link" href="#quiz">Autoevaluación</a>
+          <a class="nav-link" href="#referencias">Referencias</a>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <span>Trabajo final de curso</span>
+        <strong>Cálculo integral</strong>
+      </div>
+    </aside>
+
+    <div class="offcanvas offcanvas-start mobile-panel" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="mobileNavLabel">Método de discos</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav class="nav nav-pills flex-column mobile-links">
+          <a class="nav-link" href="#portada" data-bs-dismiss="offcanvas">Portada</a>
+          <a class="nav-link" href="#objetivos" data-bs-dismiss="offcanvas">Objetivos</a>
+          <a class="nav-link" href="#introduccion" data-bs-dismiss="offcanvas">Introducción</a>
+          <a class="nav-link" href="#marco" data-bs-dismiss="offcanvas">Marco conceptual</a>
+          <a class="nav-link" href="#procedimiento" data-bs-dismiss="offcanvas">Procedimiento</a>
+          <a class="nav-link" href="#galeria" data-bs-dismiss="offcanvas">Galería visual</a>
+          <a class="nav-link" href="#visual" data-bs-dismiss="offcanvas">Representación visual</a>
+          <a class="nav-link" href="#videos" data-bs-dismiss="offcanvas">Videos</a>
+          <a class="nav-link" href="#ejemplo" data-bs-dismiss="offcanvas">Ejemplo resuelto</a>
+          <a class="nav-link" href="#practica" data-bs-dismiss="offcanvas">Práctica</a>
+          <a class="nav-link" href="#quiz" data-bs-dismiss="offcanvas">Autoevaluación</a>
+          <a class="nav-link" href="#referencias" data-bs-dismiss="offcanvas">Referencias</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="content">
+      <section id="portada" class="hero-section section-block">
+        <div class="hero-content">
+          <p class="eyebrow">Aplicación de la integral definida</p>
+          <h2>Volúmenes de sólidos de revolución por el método de discos</h2>
+          <p class="hero-copy">
+            Objeto Virtual de Aprendizaje para comprender, visualizar y aplicar una de las técnicas más importantes del cálculo integral: construir un volumen sumando discos infinitamente delgados.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#visual">Explorar visualización</a>
+            <a class="btn btn-outline-dark" href="#videos">Ver videos</a>
+            <a class="btn btn-outline-dark" href="#quiz">Ir al quiz</a>
+          </div>
+        </div>
+        <div class="cover-card">
+          <div class="cover-row">
+            <span>Recurso</span>
+            <strong>OVA: Método de discos</strong>
+          </div>
+          <div class="cover-row">
+            <span>Tema</span>
+            <strong>Volúmenes de sólidos de revolución</strong>
+          </div>
+          <div class="cover-row">
+            <span>Asignatura</span>
+            <strong>Cálculo integral</strong>
+          </div>
+          <div class="cover-row">
+            <span>Programa</span>
+            <strong>INGENIERIA INDUSTRIAL</strong>
+          </div>
+          <div class="cover-row">
+            <span>Integrantes</span>
+            <strong>Alison Eliza Bautista Pabon · Karen Viviana Peña Fajardo · Valery Gimena Tarazona Perez · Yurley Dayana Bautista Herrera</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="objetivos" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Propósito formativo</p>
+          <h2>Objetivos de aprendizaje</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <article class="objective-card">
+              <span>01</span>
+              <h3>Identificar</h3>
+              <p>Identificar cuándo una región plana genera discos completos al rotar alrededor de un eje.</p>
+            </article>
+          </div>
+          <div class="col-md-3">
+            <article class="objective-card">
+              <span>02</span>
+              <h3>Interpretar</h3>
+              <p>Interpretar el radio del disco como distancia entre el eje de giro y la curva.</p>
+            </article>
+          </div>
+          <div class="col-md-3">
+            <article class="objective-card">
+              <span>03</span>
+              <h3>Plantear</h3>
+              <p>Plantear la integral definida correcta según el eje de rotación y la variable de integración.</p>
+            </article>
+          </div>
+          <div class="col-md-3">
+            <article class="objective-card">
+              <span>04</span>
+              <h3>Calcular</h3>
+              <p>Calcular volúmenes de revolución y comunicar el resultado con unidades cúbicas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="introduccion" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Antes de la fórmula</p>
+          <h2>¿Qué problema resuelve el método de discos?</h2>
+        </div>
+        <div class="concept-grid">
+          <article class="text-panel">
+            <h3>Idea central</h3>
+            <p>
+              En cálculo integral, muchas veces una figura plana se transforma en un sólido tridimensional al girarla alrededor de una recta. Por ejemplo, si la región bajo una curva gira alrededor del eje <strong>x</strong>, aparece un cuerpo con volumen. El método de discos permite calcular ese volumen mediante una suma acumulada de cortes circulares.
+            </p>
+            <p class="mt-3">
+              La intuición es parecida a imaginar un sólido cortado en muchas rebanadas muy delgadas. Si cada rebanada es un disco, su volumen aproximado es <strong>área de la base × grosor</strong>. Cuando el grosor tiende a cero, la suma de esos volúmenes se convierte en una integral definida.
+            </p>
+          </article>
+          <article class="text-panel accent-panel">
+            <h3>Secuencia de aprendizaje</h3>
+            <ul class="clean-list">
+              <li>La región plana se reconoce como el perfil que genera el sólido.</li>
+              <li>El eje de revolución define hacia dónde se forma el volumen.</li>
+              <li>Cada corte perpendicular al eje produce un disco circular.</li>
+              <li>La integral definida acumula todos los discos y entrega el volumen total.</li>
+            </ul>
+            <div class="note-box">
+              <strong>Frase clave:</strong> integrar no es solo calcular; aquí significa acumular infinitos discos para reconstruir el volumen completo.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="marco" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Base teórica</p>
+          <h2>Marco conceptual completo</h2>
+        </div>
+        <div class="concept-grid">
+          <article class="text-panel">
+            <h3>Definición formal</h3>
+            <p>
+              Sea <strong>f</strong> una función continua y no negativa en el intervalo <strong>[a, b]</strong>. Si la región limitada por <strong>y = f(x)</strong>, el eje <strong>x</strong> y las rectas <strong>x = a</strong> y <strong>x = b</strong> rota alrededor del eje <strong>x</strong>, el sólido generado puede dividirse en secciones transversales circulares. Cada sección tiene radio <strong>R(x) = f(x)</strong>.
+            </p>
+            <div class="formula-box">
+              <span>Discos alrededor del eje x</span>
+              <strong>V = π ∫<sub>a</sub><sup>b</sup> [R(x)]² dx = π ∫<sub>a</sub><sup>b</sup> [f(x)]² dx</strong>
+            </div>
+            <p>
+              Si la región rota alrededor del eje <strong>y</strong> y se describe como <strong>x = g(y)</strong>, los discos son horizontales y se integra con respecto a <strong>y</strong>.
+            </p>
+            <div class="formula-box muted">
+              <span>Discos alrededor del eje y</span>
+              <strong>V = π ∫<sub>c</sub><sup>d</sup> [R(y)]² dy = π ∫<sub>c</sub><sup>d</sup> [g(y)]² dy</strong>
+            </div>
+          </article>
+          <article class="text-panel accent-panel">
+            <h3>Condiciones para usar discos</h3>
+            <ul class="clean-list">
+              <li>La región debe tocar el eje de rotación o cerrar contra él.</li>
+              <li>El corte debe ser perpendicular al eje de rotación.</li>
+              <li>La sección transversal debe ser un disco completo, sin agujero interno.</li>
+              <li>La función que determina el radio debe ser continua en el intervalo.</li>
+              <li>Los límites de integración deben cubrir exactamente la región que gira.</li>
+            </ul>
+            <h3>Discos vs. arandelas</h3>
+            <p>
+              Si al rotar la región queda un espacio vacío en el centro, ya no se usa el método de discos puro, sino el método de arandelas: <strong>V = π ∫(R² - r²) dx</strong>. En discos solo hay un radio; en arandelas hay radio exterior y radio interior.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="procedimiento" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Ruta de solución</p>
+          <h2>Procedimiento recomendado</h2>
+        </div>
+        <div class="stepper five-steps">
+          <article class="step-card">
+            <span>1</span>
+            <h3>Dibujar la región</h3>
+            <p>Ubica la curva, el eje de rotación y las rectas que delimitan el intervalo. El dibujo evita confundir radios y límites.</p>
+          </article>
+          <article class="step-card">
+            <span>2</span>
+            <h3>Elegir la variable</h3>
+            <p>Si el eje es horizontal, normalmente se usa <strong>dx</strong>. Si el eje es vertical, normalmente se usa <strong>dy</strong>.</p>
+          </article>
+          <article class="step-card">
+            <span>3</span>
+            <h3>Determinar el radio</h3>
+            <p>El radio es la distancia desde el eje de rotación hasta la curva que forma el borde externo del disco.</p>
+          </article>
+          <article class="step-card">
+            <span>4</span>
+            <h3>Plantear la integral</h3>
+            <p>Sustituye el radio en <strong>V = π ∫ R²</strong> y coloca los límites correctos.</p>
+          </article>
+          <article class="step-card">
+            <span>5</span>
+            <h3>Resolver y concluir</h3>
+            <p>Integra, evalúa en los límites y expresa el resultado en unidades cúbicas.</p>
+          </article>
+        </div>
+
+        <div class="info-band">
+          <div>
+            <h3>Errores comunes</h3>
+            <p>Olvidar elevar el radio al cuadrado, usar límites que no corresponden a la región, confundir discos con arandelas o tomar como radio una expresión que no mide distancia al eje.</p>
+          </div>
+          <div>
+            <h3>Aplicaciones reales</h3>
+            <p>El método aparece en diseño de envases, piezas mecánicas, recipientes, moldes, estructuras con simetría circular y modelos de ingeniería donde una curva define el perfil del objeto.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Conexión visual</p>
+          <h2>Imágenes interactivas del método</h2>
+          <p class="section-copy">Pasa el cursor sobre cada imagen para observar el cambio visual. Las tres escenas resumen la idea geométrica del método de discos.</p>
+        </div>
+        <div class="image-gallery">
+          <article class="image-tile">
+            <div class="math-image region-image" aria-hidden="true">
+              <svg viewBox="0 0 420 290">
+                <defs>
+                  <linearGradient id="regionFill" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#f7b5c9"></stop>
+                    <stop offset="100%" stop-color="#8da98c"></stop>
+                  </linearGradient>
+                </defs>
+                <line x1="52" y1="230" x2="368" y2="230" class="mini-axis"></line>
+                <line x1="65" y1="242" x2="65" y2="38" class="mini-axis"></line>
+                <path class="mini-region" d="M65 230 C120 170 190 128 340 82 L340 230 Z" fill="url(#regionFill)"></path>
+                <path class="mini-curve" d="M65 230 C120 170 190 128 340 82"></path>
+                <text x="92" y="70">y = f(x)</text>
+                <text x="318" y="256">x</text>
+                <text x="38" y="52">y</text>
+              </svg>
+            </div>
+            <h3>Región generadora</h3>
+            <p>La curva y el eje delimitan el área que se hará girar para producir el sólido.</p>
+          </article>
+          <article class="image-tile">
+            <div class="math-image disk-image" aria-hidden="true">
+              <svg viewBox="0 0 420 290">
+                <defs>
+                  <linearGradient id="diskFill" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#642746"></stop>
+                    <stop offset="100%" stop-color="#d78aa8"></stop>
+                  </linearGradient>
+                </defs>
+                <line x1="50" y1="145" x2="370" y2="145" class="mini-axis"></line>
+                <ellipse cx="210" cy="145" rx="82" ry="26" class="hover-disk back"></ellipse>
+                <ellipse cx="210" cy="145" rx="70" ry="112" fill="url(#diskFill)" class="hover-disk main"></ellipse>
+                <line x1="210" y1="145" x2="210" y2="38" class="mini-radius"></line>
+                <text x="224" y="76">R(x)</text>
+                <text x="178" y="270">disco</text>
+              </svg>
+            </div>
+            <h3>Disco representativo</h3>
+            <p>Un corte perpendicular al eje tiene forma circular y radio igual a la distancia hasta la curva.</p>
+          </article>
+          <article class="image-tile">
+            <div class="math-image solid-image" aria-hidden="true">
+              <svg viewBox="0 0 420 290">
+                <defs>
+                  <linearGradient id="solidFill2" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#32182b"></stop>
+                    <stop offset="55%" stop-color="#d78aa8"></stop>
+                    <stop offset="100%" stop-color="#8da98c"></stop>
+                  </linearGradient>
+                </defs>
+                <path class="solid-body" d="M64 145 C132 72 242 54 346 78 C388 116 388 176 346 212 C242 236 132 218 64 145 Z" fill="url(#solidFill2)"></path>
+                <ellipse cx="346" cy="145" rx="34" ry="68" class="solid-end"></ellipse>
+                <path class="solid-line" d="M64 145 C132 72 242 54 346 78"></path>
+                <path class="solid-line lower" d="M64 145 C132 218 242 236 346 212"></path>
+                <text x="112" y="262">V = π ∫ R² dx</text>
+              </svg>
+            </div>
+            <h3>Sólido de revolución</h3>
+            <p>La suma de discos infinitamente delgados reconstruye el volumen del sólido completo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="visual" class="section-block visual-section">
+        <div class="section-heading">
+          <p class="eyebrow">Exploración visual</p>
+          <h2>Del área plana al sólido de revolución</h2>
+        </div>
+        <div class="visual-layout">
+          <div class="graph-card">
+            <svg class="disk-visual" viewBox="0 0 760 420" role="img" aria-labelledby="graphTitle graphDesc">
+              <title id="graphTitle">Visualización del método de discos</title>
+              <desc id="graphDesc">La región bajo y igual a raíz de x entre cero y cuatro gira alrededor del eje x y forma un sólido de revolución.</desc>
+              <defs>
+                <linearGradient id="shade" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#f7b5c9" stop-opacity=".55"></stop>
+                  <stop offset="100%" stop-color="#9dbf9e" stop-opacity=".45"></stop>
+                </linearGradient>
+                <linearGradient id="solid" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#642746" stop-opacity=".9"></stop>
+                  <stop offset="52%" stop-color="#d78aa8" stop-opacity=".75"></stop>
+                  <stop offset="100%" stop-color="#8da98c" stop-opacity=".85"></stop>
+                </linearGradient>
+              </defs>
+
+              <line x1="80" y1="340" x2="690" y2="340" class="axis"></line>
+              <line x1="95" y1="360" x2="95" y2="60" class="axis"></line>
+              <text x="690" y="367" class="axis-label">x</text>
+              <text x="66" y="70" class="axis-label">y</text>
+              <text x="90" y="366" class="tick-label">0</text>
+              <text x="612" y="366" class="tick-label">4</text>
+              <text x="120" y="92" class="curve-label">y = √x</text>
+
+              <path d="M 95 340 C 190 250, 320 184, 615 110 L 615 340 Z" fill="url(#shade)" class="region"></path>
+              <path d="M 95 340 C 190 250, 320 184, 615 110" class="curve"></path>
+              <line x1="615" y1="340" x2="615" y2="110" class="limit-line"></line>
+
+              <g class="solid-group">
+                <path d="M 95 340 C 190 250, 320 184, 615 110 C 660 210, 660 470, 615 340 C 442 340, 268 340, 95 340 Z" fill="url(#solid)" opacity=".22"></path>
+                <ellipse cx="615" cy="225" rx="36" ry="115" class="end-ellipse"></ellipse>
+                <path d="M 95 340 C 190 430, 320 496, 615 340" class="lower-curve"></path>
+                <path d="M 95 340 C 190 250, 320 184, 615 110" class="upper-curve"></path>
+              </g>
+
+              <g id="movingDisk">
+                <line x1="383" y1="340" x2="383" y2="168" class="radius-line"></line>
+                <ellipse cx="383" cy="254" rx="22" ry="86" class="disk-slice"></ellipse>
+                <text x="402" y="244" class="radius-label">r = f(x)</text>
+              </g>
+            </svg>
+          </div>
+          <div class="visual-notes">
+            <h3>Lectura de la gráfica</h3>
+            <p>
+              La región sombreada bajo <strong>y = √x</strong>, desde <strong>x = 0</strong> hasta <strong>x = 4</strong>, gira alrededor del eje <strong>x</strong>. Cada corte vertical genera un disco de radio <strong>f(x)</strong>.
+            </p>
+            <p>
+              Para este caso, <strong>R(x) = √x</strong>, por lo tanto el área transversal es <strong>A(x) = π(√x)² = πx</strong>. El volumen completo se obtiene integrando esa área desde 0 hasta 4.
+            </p>
+            <button class="btn btn-primary" id="animateDisk" type="button">Animar disco</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="videos" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Apoyo audiovisual</p>
+          <h2>Videos explicativos</h2>
+          <p class="section-copy">Estos videos complementan la explicación: primero la idea general, luego un ejercicio con discos y finalmente una visualización con GeoGebra.</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/HqVsHjxKJmo" title="Volumen de un sólido de revolución usando discos - JulioProfe" allowfullscreen></iframe>
+            </div>
+            <h3>Ejemplo con método de discos</h3>
+            <p>JulioProfe explica cómo determinar el volumen de un sólido de revolución usando discos.</p>
+            <a href="https://www.youtube.com/watch?v=HqVsHjxKJmo" target="_blank" rel="noopener">Abrir video en YouTube</a>
+          </article>
+          <article class="video-card">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/RIbkpzVl7x0" title="Sólidos de revolución con GeoGebra - Método de discos" allowfullscreen></iframe>
+            </div>
+            <h3>Visualización en GeoGebra</h3>
+            <p>Construcción visual del sólido de revolución y relación con el cálculo por discos.</p>
+            <a href="https://www.youtube.com/watch?v=RIbkpzVl7x0" target="_blank" rel="noopener">Abrir video en YouTube</a>
+          </article>
+          <article class="video-card">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/esQowM4clZQ" title="Sólido de revolución método de discos ejercicio" allowfullscreen></iframe>
+            </div>
+            <h3>Ejercicio adicional</h3>
+            <p>Video de refuerzo para observar otro planteamiento y comparar el procedimiento.</p>
+            <a href="https://www.youtube.com/watch?v=esQowM4clZQ" target="_blank" rel="noopener">Abrir video en YouTube</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="ejemplo" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Modelo de solución</p>
+          <h2>Ejemplo resuelto paso a paso</h2>
+        </div>
+        <div class="stepper">
+          <article class="step-card">
+            <span>1</span>
+            <h3>Planteamiento</h3>
+            <p>Hallar el volumen del sólido generado al rotar la región bajo <strong>y = √x</strong>, sobre el intervalo <strong>[0, 4]</strong>, alrededor del eje <strong>x</strong>.</p>
+          </article>
+          <article class="step-card">
+            <span>2</span>
+            <h3>Límites y radio</h3>
+            <p>Los límites son <strong>a = 0</strong> y <strong>b = 4</strong>. Como el eje de rotación es el eje <strong>x</strong>, el radio del disco es <strong>R(x) = √x</strong>.</p>
+          </article>
+          <article class="step-card">
+            <span>3</span>
+            <h3>Integral</h3>
+            <p>Se usa <strong>V = π ∫<sub>a</sub><sup>b</sup> [R(x)]² dx</strong>. Por tanto:</p>
+            <div class="calculation">V = π ∫<sub>0</sub><sup>4</sup> (√x)² dx = π ∫<sub>0</sub><sup>4</sup> x dx</div>
+          </article>
+          <article class="step-card">
+            <span>4</span>
+            <h3>Cálculo y respuesta</h3>
+            <div class="calculation">V = π [x² / 2]<sub>0</sub><sup>4</sup> = π(16 / 2) = 8π</div>
+            <p>El volumen del sólido es <strong>8π unidades cúbicas</strong>, aproximadamente <strong>25,13 u³</strong>.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="practica" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Trabajo autónomo</p>
+          <h2>Ejercicios de práctica por niveles</h2>
+          <p class="section-copy">Resuelve primero sin mirar la respuesta. Luego usa el botón de solución para comprobar el planteamiento y el resultado.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="practice-card">
+              <div class="difficulty">Nivel 1 · Básico</div>
+              <h3>Ejercicio 1</h3>
+              <p>Encuentra el volumen generado al rotar la región bajo <strong>y = x</strong>, de <strong>x = 0</strong> a <strong>x = 3</strong>, alrededor del eje <strong>x</strong>.</p>
+              <button class="btn btn-outline-dark reveal-btn" type="button" data-target="solution1">Revelar solución</button>
+              <div class="solution" id="solution1">
+                <p><strong>Solución:</strong> V = π ∫<sub>0</sub><sup>3</sup> x² dx = π[x³/3]<sub>0</sub><sup>3</sup> = 9π u³.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="practice-card">
+              <div class="difficulty">Nivel 2 · Básico</div>
+              <h3>Ejercicio 2</h3>
+              <p>Calcula el volumen al rotar <strong>y = 2</strong>, de <strong>x = 1</strong> a <strong>x = 5</strong>, alrededor del eje <strong>x</strong>.</p>
+              <button class="btn btn-outline-dark reveal-btn" type="button" data-target="solution2">Revelar solución</button>
+              <div class="solution" id="solution2">
+                <p><strong>Solución:</strong> V = π ∫<sub>1</sub><sup>5</sup> 2² dx = 4π[x]<sub>1</sub><sup>5</sup> = 16π u³.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="practice-card">
+              <div class="difficulty advanced">Nivel 3 · Intermedio</div>
+              <h3>Ejercicio 3</h3>
+              <p>Encuentra el volumen generado al rotar la región bajo <strong>y = 2x + 1</strong>, de <strong>x = 0</strong> a <strong>x = 2</strong>, alrededor del eje <strong>x</strong>.</p>
+              <button class="btn btn-outline-dark reveal-btn" type="button" data-target="solution3">Revelar solución</button>
+              <div class="solution" id="solution3">
+                <p><strong>Solución:</strong> V = π ∫<sub>0</sub><sup>2</sup> (2x + 1)² dx = π ∫<sub>0</sub><sup>2</sup> (4x² + 4x + 1) dx = 62π/3 u³.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="practice-card">
+              <div class="difficulty advanced">Nivel 4 · Intermedio</div>
+              <h3>Ejercicio 4</h3>
+              <p>Calcula el volumen generado al rotar <strong>y = √(x + 1)</strong>, de <strong>x = 0</strong> a <strong>x = 3</strong>, alrededor del eje <strong>x</strong>.</p>
+              <button class="btn btn-outline-dark reveal-btn" type="button" data-target="solution4">Revelar solución</button>
+              <div class="solution" id="solution4">
+                <p><strong>Solución:</strong> V = π ∫<sub>0</sub><sup>3</sup> (√(x + 1))² dx = π ∫<sub>0</sub><sup>3</sup> (x + 1) dx = π[x²/2 + x]<sub>0</sub><sup>3</sup> = 15π/2 u³.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-12">
+            <article class="practice-card feature-practice">
+              <div class="difficulty challenge">Nivel 5 · Reto</div>
+              <h3>Ejercicio 5</h3>
+              <p>La región bajo <strong>x = y²</strong>, entre <strong>y = 0</strong> y <strong>y = 2</strong>, rota alrededor del eje <strong>y</strong>. Calcula el volumen usando discos horizontales.</p>
+              <button class="btn btn-outline-dark reveal-btn" type="button" data-target="solution5">Revelar solución</button>
+              <div class="solution" id="solution5">
+                <p><strong>Solución:</strong> Como se gira alrededor del eje y, el radio es R(y) = y². Entonces V = π ∫<sub>0</sub><sup>2</sup> (y²)² dy = π ∫<sub>0</sub><sup>2</sup> y⁴ dy = π[y⁵/5]<sub>0</sub><sup>2</sup> = 32π/5 u³.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" class="section-block quiz-section">
+        <div class="section-heading">
+          <p class="eyebrow">Autoevaluación</p>
+          <h2>Quiz interactivo</h2>
+          <p class="section-copy">Responde las 7 preguntas. El recurso te dará retroalimentación inmediata para reforzar el concepto.</p>
+        </div>
+        <form id="quizForm" class="quiz-form">
+          <fieldset class="question-card">
+            <legend>1. En el método de discos, el área de cada sección transversal es:</legend>
+            <label><input type="radio" name="q1" value="a"> 2πr</label>
+            <label><input type="radio" name="q1" value="b"> πr²</label>
+            <label><input type="radio" name="q1" value="c"> π(R² - r²)</label>
+            <p class="feedback" id="feedback-q1"></p>
+          </fieldset>
+
+          <fieldset class="question-card">
+            <legend>2. Si la región bajo y = f(x) gira alrededor del eje x, el radio del disco es:</legend>
+            <label><input type="radio" name="q2" value="a"> f(x)</label>
+            <label><input type="radio" name="q2" value="b"> x + f(x)</label>
+            <label><input type="radio" name="q2" value="c"> f'(x)</label>
+            <p class="feedback" id="feedback-q2"></p>
+          </fieldset>
+
+          <fieldset class="question-card">
+            <legend>3. El método de discos se diferencia del método de arandelas porque:</legend>
+            <label><input type="radio" name="q3" value="a"> Usa secciones sin hueco interior.</label>
+            <label><input type="radio" name="q3" value="b"> Solo funciona con rectas.</label>
+            <label><input type="radio" name="q3" value="c"> No utiliza integrales definidas.</label>
+            <p class="feedback" id="feedback-q3"></p>
+          </fieldset>
+
+          <fieldset class="question-card">
+            <legend>4. Si una región gira alrededor del eje y y se expresa como x = g(y), la integral debe escribirse con:</legend>
+            <label><input type="radio" name="q4" value="a"> dx siempre.</label>
+            <label><input type="radio" name="q4" value="b"> dy.</label>
+            <label><input type="radio" name="q4" value="c"> dt.</label>
+            <p class="feedback" id="feedback-q4"></p>
+          </fieldset>
+
+          <fieldset class="question-card">
+            <legend>5. Para y = 3x en [0, 2], al rotar alrededor del eje x, la integral correcta es:</legend>
+            <label><input type="radio" name="q5" value="a"> V = π ∫<sub>0</sub><sup>2</sup> 3x dx</label>
+            <label><input type="radio" name="q5" value="b"> V = π ∫<sub>0</sub><sup>2</sup> (3x)² dx</label>
+            <label><input type="radio" name="q5" value="c"> V = 2π ∫<sub>0</sub><sup>2</sup> x(3x) dx</label>
+            <p class="feedback" id="feedback-q5"></p>
+          </fieldset>
+
+          <fieldset class="question-card">
+            <legend>6. ¿Qué representa el diferencial dx o dy en este método?</legend>
+            <label><input type="radio" name="q6" value="a"> El grosor infinitesimal de cada disco.</label>
+            <label><input type="radio" name="q6" value="b"> El radio final del sólido.</label>
+            <label><input type="radio" name="q6" value="c"> La altura máxima de la curva.</label>
+            <p class="feedback" id="feedback-q6"></p>
+          </fieldset>
+
+          <fieldset class="question-card">
+            <legend>7. Si el resultado de una integral de volumen es 12π, sus unidades deben expresarse como:</legend>
+            <label><input type="radio" name="q7" value="a"> Unidades lineales.</label>
+            <label><input type="radio" name="q7" value="b"> Unidades cuadradas.</label>
+            <label><input type="radio" name="q7" value="c"> Unidades cúbicas.</label>
+            <p class="feedback" id="feedback-q7"></p>
+          </fieldset>
+
+          <div class="quiz-actions">
+            <button class="btn btn-primary" type="submit">Calificar respuestas</button>
+            <button class="btn btn-outline-dark" id="resetQuiz" type="button">Reiniciar</button>
+          </div>
+          <p class="quiz-score" id="quizScore" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="referencias" class="section-block references-section">
+        <div class="section-heading">
+          <p class="eyebrow">Fuentes consultadas</p>
+          <h2>Referencias bibliográficas</h2>
+        </div>
+        <ol class="references-list">
+          <li>Stewart, J. (2012). <em>Cálculo de una variable: Trascendentes tempranas</em> (7.ª ed.). Cengage Learning.</li>
+          <li>Thomas, G. B., Weir, M. D., & Hass, J. (2010). <em>Cálculo: Una variable</em> (12.ª ed.). Pearson Educación.</li>
+          <li>OpenStax. (2021). <em>Cálculo, volumen 1: Determinar los volúmenes mediante el corte</em>. Rice University. https://openstax.org/books/c%C3%A1lculo-volumen-1/pages/6-2-determinar-los-volumenes-mediante-el-corte</li>
+          <li>Vergara, J. (2022). <em>Sólidos de revolución y suma de Riemann en GeoGebra</em>. Revista Digital: Matemática, Educación e Internet. https://www.redalyc.org/journal/6079/607968030005/html/</li>
+          <li>JulioProfe. (2014). <em>Volumen de un sólido de revolución usando discos</em> [Video]. YouTube. https://www.youtube.com/watch?v=HqVsHjxKJmo</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

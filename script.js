@@ -1,0 +1,87 @@
+const disk = document.querySelector("#movingDisk");
+const animateButton = document.querySelector("#animateDisk");
+const revealButtons = document.querySelectorAll(".reveal-btn");
+const quizForm = document.querySelector("#quizForm");
+const resetQuiz = document.querySelector("#resetQuiz");
+const quizScore = document.querySelector("#quizScore");
+
+const answers = {
+  q1: {
+    correct: "b",
+    message: "Correcto: cada disco tiene área πr²."
+  },
+  q2: {
+    correct: "a",
+    message: "Correcto: el radio es la distancia desde el eje x hasta la curva, es decir f(x)."
+  },
+  q3: {
+    correct: "a",
+    message: "Correcto: en discos no hay hueco interior; en arandelas sí."
+  },
+  q4: {
+    correct: "b",
+    message: "Correcto: si el radio se expresa como función de y, se integra con dy."
+  },
+  q5: {
+    correct: "b",
+    message: "Correcto: el radio es 3x y en discos siempre se eleva al cuadrado."
+  },
+  q6: {
+    correct: "a",
+    message: "Correcto: dx o dy representa el grosor infinitesimal de cada disco."
+  },
+  q7: {
+    correct: "c",
+    message: "Correcto: el volumen se expresa en unidades cúbicas."
+  }
+};
+
+animateButton?.addEventListener("click", () => {
+  disk?.classList.toggle("is-animated");
+  animateButton.textContent = disk?.classList.contains("is-animated") ? "Pausar animación" : "Animar disco";
+});
+
+revealButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const solution = document.getElementById(button.dataset.target);
+    const isVisible = solution.classList.toggle("is-visible");
+    button.textContent = isVisible ? "Ocultar solución" : "Revelar solución";
+  });
+});
+
+quizForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  let score = 0;
+
+  Object.entries(answers).forEach(([question, data]) => {
+    const selected = quizForm.querySelector(`input[name="${question}"]:checked`);
+    const feedback = document.querySelector(`#feedback-${question}`);
+
+    if (!selected) {
+      feedback.textContent = "Selecciona una respuesta para recibir retroalimentación.";
+      feedback.className = "feedback incorrect";
+      return;
+    }
+
+    if (selected.value === data.correct) {
+      score += 1;
+      feedback.textContent = data.message;
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrecto. Revisa la fórmula y el significado geométrico del disco.";
+      feedback.className = "feedback incorrect";
+    }
+  });
+
+  quizScore.textContent = `Resultado: ${score} de 7 respuestas correctas.`;
+});
+
+resetQuiz?.addEventListener("click", () => {
+  quizForm.reset();
+  document.querySelectorAll(".feedback").forEach((feedback) => {
+    feedback.textContent = "";
+    feedback.className = "feedback";
+  });
+  quizScore.textContent = "";
+});
